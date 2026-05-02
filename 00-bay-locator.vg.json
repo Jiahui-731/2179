@@ -1,0 +1,386 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "The Bay You Swim In",
+    "subtitle": [
+      "36 EPA monitoring sites around Port Phillip Bay. Circle size = long-term average enterococci (orgs/100mL, sqrt scale).",
+      "Colour = bay region. Each of the four regions forms a distinct cluster — Western Shore cleanest, Inner North dirtiest."
+    ],
+    "anchor": "start",
+    "font": "Playfair Display",
+    "fontSize": 22,
+    "fontWeight": 700,
+    "color": "#1a1a1a",
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#5a5a5a",
+    "subtitleLineHeight": 16,
+    "offset": 16
+  },
+  "config": {
+    "background": null,
+    "view": {"stroke": null, "fill": "#a3c5d4"},
+    "legend": {
+      "labelFont": "Inter",
+      "labelFontSize": 11,
+      "titleFont": "Inter",
+      "titleFontSize": 11,
+      "titleColor": "#1a1a1a",
+      "labelColor": "#3a3a3a",
+      "padding": 8
+    }
+  },
+  "hconcat": [
+    {
+      "width": 600,
+      "height": 620,
+      "resolve": {
+        "scale": {"color": "independent", "size": "independent"}
+      },
+      "projection": {
+        "type": "mercator",
+        "center": [144.78, -38.15],
+        "scale": 38000,
+        "translate": [300, 310]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/states.geojson",
+            "format": {"type": "json", "property": "features"}
+          },
+          "transform": [
+            {"filter": "datum.properties.STATE_NAME == 'Victoria'"}
+          ],
+          "mark": {
+            "type": "geoshape",
+            "fill": "#f4ead0",
+            "stroke": null
+          }
+        },
+        {
+          "data": {
+            "url": "data/ppb_regions.geojson",
+            "format": {"type": "json", "property": "features"}
+          },
+          "mark": {
+            "type": "geoshape",
+            "stroke": "#ffffff",
+            "strokeWidth": 1.5,
+            "opacity": 0.95
+          },
+          "encoding": {
+            "color": {
+              "field": "properties.region",
+              "type": "nominal",
+              "scale": {
+                "domain": ["Western Shore", "Mornington Peninsula", "Eastern Bayside", "Inner North"],
+                "range": ["#cfdce8", "#d8e8ee", "#fce5b8", "#fcdedb"]
+              },
+              "legend": null
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {"lon": 144.84, "lat": -38.18, "label": "PORT PHILLIP", "size": 26},
+              {"lon": 144.84, "lat": -38.225, "label": "BAY", "size": 26},
+              {"lon": 144.82, "lat": -38.51, "label": "BASS STRAIT", "size": 14},
+              {"lon": 144.84, "lat": -37.855, "label": "Hobsons Bay", "size": 11},
+              {"lon": 144.46, "lat": -38.13, "label": "Corio Bay", "size": 11},
+              {"lon": 144.66, "lat": -38.323, "label": "The Heads", "size": 10}
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "font": "Playfair Display",
+            "fontStyle": "italic",
+            "color": "#3a5a6a",
+            "opacity": 0.85,
+            "letterSpacing": 1.5
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "label"},
+            "size": {"field": "size", "type": "quantitative", "scale": null, "legend": null}
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {"lon": 144.985, "lat": -37.755, "label": "INNER NORTH"},
+              {"lon": 145.20, "lat": -38.04, "label": "EASTERN BAYSIDE"},
+              {"lon": 144.85, "lat": -38.42, "label": "MORNINGTON PENINSULA"},
+              {"lon": 144.38, "lat": -37.92, "label": "WESTERN SHORE"}
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "font": "Inter",
+            "fontSize": 10,
+            "fontWeight": 700,
+            "letterSpacing": 2.2,
+            "color": "#5a4630",
+            "opacity": 0.65
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "label"}
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {"lon": 144.36, "lat": -38.149, "label": "Geelong"}
+            ]
+          },
+          "mark": {
+            "type": "circle",
+            "size": 70,
+            "fill": "#1a1a1a",
+            "opacity": 0.85,
+            "stroke": "#fdfaf3",
+            "strokeWidth": 1.5
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"}
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {"lon": 144.36, "lat": -38.149, "label": "Geelong"}
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "font": "Inter",
+            "fontWeight": 700,
+            "fontSize": 11,
+            "color": "#1a1a1a",
+            "align": "left",
+            "dx": 10,
+            "dy": 4
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "label"}
+          }
+        },
+        {
+          "data": {"url": "data/beach_summary.csv"},
+          "mark": {
+            "type": "circle",
+            "stroke": "#ffffff",
+            "strokeWidth": 1.5,
+            "opacity": 0.92
+          },
+          "encoding": {
+            "longitude": {"field": "longitude", "type": "quantitative"},
+            "latitude": {"field": "latitude", "type": "quantitative"},
+            "size": {
+              "field": "avg_enterococci",
+              "type": "quantitative",
+              "title": "Avg enterococci (orgs/100mL)",
+              "scale": {"type": "sqrt", "domain": [10, 500], "range": [60, 700]},
+              "legend": {
+                "orient": "top-right",
+                "offset": 8,
+                "fillColor": "rgba(253,250,243,0.92)",
+                "padding": 10,
+                "cornerRadius": 4,
+                "format": ".0f",
+                "values": [35, 100, 200, 400]
+              }
+            },
+            "color": {
+              "field": "region",
+              "type": "nominal",
+              "title": "Bay region",
+              "scale": {
+                "domain": ["Western Shore", "Mornington Peninsula", "Eastern Bayside", "Inner North"],
+                "range": ["#3a7ca5", "#7ba7c7", "#d4a23a", "#c73e3e"]
+              },
+              "legend": {
+                "orient": "top-left",
+                "offset": 8,
+                "fillColor": "rgba(253,250,243,0.92)",
+                "padding": 10,
+                "cornerRadius": 4,
+                "symbolType": "circle",
+                "symbolStrokeWidth": 0,
+                "symbolSize": 110
+              }
+            },
+            "tooltip": [
+              {"field": "site_name", "title": "Beach"},
+              {"field": "region", "title": "Region"},
+              {"field": "avg_enterococci", "title": "Avg enterococci (orgs/100mL)", "format": ".0f"},
+              {"field": "samples", "title": "Routine samples"}
+            ]
+          }
+        },
+        {
+          "data": {"url": "data/beach_summary.csv"},
+          "transform": [
+            {"filter": "datum.avg_enterococci > 350"},
+            {"calculate": "datum.site_name == 'Carrum Surf Life Saving Club' ? 'Carrum SLC' : (datum.site_name == 'Frankston Coast Guard' ? 'Frankston CG' : datum.site_name)", "as": "callout_label"}
+          ],
+          "mark": {
+            "type": "text",
+            "font": "Inter",
+            "fontSize": 11.5,
+            "fontWeight": 700,
+            "color": "#1a1a1a",
+            "align": "right",
+            "dx": -16,
+            "dy": -5
+          },
+          "encoding": {
+            "longitude": {"field": "longitude", "type": "quantitative"},
+            "latitude": {"field": "latitude", "type": "quantitative"},
+            "text": {"field": "callout_label"}
+          }
+        },
+        {
+          "data": {"url": "data/beach_summary.csv"},
+          "transform": [
+            {"filter": "datum.avg_enterococci > 350"},
+            {"calculate": "format(datum.avg_enterococci, '.0f') + ' orgs/100mL'", "as": "label_num"}
+          ],
+          "mark": {
+            "type": "text",
+            "font": "Inter",
+            "fontSize": 10.5,
+            "fontWeight": 700,
+            "color": "#c73e3e",
+            "align": "right",
+            "dx": -16,
+            "dy": 9
+          },
+          "encoding": {
+            "longitude": {"field": "longitude", "type": "quantitative"},
+            "latitude": {"field": "latitude", "type": "quantitative"},
+            "text": {"field": "label_num"}
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {"lon": 144.42, "lat": -38.46, "label": "↑", "size": 22},
+              {"lon": 144.42, "lat": -38.495, "label": "N", "size": 12}
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "font": "Inter",
+            "fontWeight": 700,
+            "color": "#3a3a3a"
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "label"},
+            "size": {"field": "size", "type": "quantitative", "scale": null, "legend": null}
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {"lon": 144.84, "lat": -38.515},
+              {"lon": 144.897, "lat": -38.515}
+            ]
+          },
+          "mark": {
+            "type": "rule",
+            "strokeWidth": 2.2,
+            "color": "#3a3a3a"
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"}
+          }
+        },
+        {
+          "data": {"values": [{"lon": 144.868, "lat": -38.503, "label": "5 km"}]},
+          "mark": {
+            "type": "text",
+            "font": "Inter",
+            "fontSize": 10,
+            "fontWeight": 500,
+            "color": "#3a3a3a"
+          },
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "label"}
+          }
+        }
+      ]
+    },
+    {
+      "width": 160,
+      "height": 180,
+      "projection": {
+        "type": "mercator",
+        "center": [133, -26],
+        "scale": 145,
+        "translate": [80, 95]
+      },
+      "view": {"fill": "#fdfaf3", "stroke": "#d8d2bf", "strokeWidth": 1, "cornerRadius": 4},
+      "layer": [
+        {
+          "data": {
+            "url": "data/states.geojson",
+            "format": {"type": "json", "property": "features"}
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#f4ead0",
+            "stroke": "#c4a86a",
+            "strokeWidth": 0.5
+          }
+        },
+        {
+          "data": {"values": [{"lon": 144.96, "lat": -37.95}]},
+          "mark": {"type": "point", "shape": "square", "size": 220, "filled": false, "stroke": "#c73e3e", "strokeWidth": 2.2},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"}
+          }
+        },
+        {
+          "data": {"values": [{"lon": 144.96, "lat": -37.95}]},
+          "mark": {"type": "circle", "size": 18, "fill": "#c73e3e"},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"}
+          }
+        },
+        {
+          "data": {"values": [{"lon": 142.5, "lat": -37.5, "label": "Melbourne"}]},
+          "mark": {"type": "text", "font": "Inter", "fontSize": 10, "fontWeight": 600, "color": "#3a3a3a", "align": "right", "dx": -2},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "label"}
+          }
+        },
+        {
+          "data": {"values": [{"lon": 134, "lat": -23, "label": "AUSTRALIA"}]},
+          "mark": {"type": "text", "font": "Inter", "fontSize": 9, "fontWeight": 500, "color": "#8a7a5a", "letterSpacing": 1.6, "opacity": 0.85},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "text": {"field": "label"}
+          }
+        }
+      ]
+    }
+  ]
+}

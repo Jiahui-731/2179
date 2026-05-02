@@ -1,0 +1,5 @@
+rain_yesterday_bucket,avg_enterococci,median_enterococci,samples,poor_pct
+Dry (0mm),130.71,10.0,3379,8.26
+Light (<5mm),141.03,20.0,1307,12.32
+Moderate (5-20mm),158.5,20.0,622,15.76
+Heavy (20mm+),274.75,20.0,108,14.81

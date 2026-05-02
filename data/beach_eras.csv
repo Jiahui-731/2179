@@ -1,0 +1,73 @@
+site_id,site_name,region,delta,pct_change,rank,mean_ent,era,era_a_mean,era_b_mean
+99590,Frankston Coast Guard,Eastern Bayside,469.16,387.6,1,121.04,2020-2022,121.04,590.2
+99995,Carrum Surf Life Saving Club,Eastern Bayside,420.85,595.7,2,70.65,2020-2022,70.65,491.5
+99020,Port Melbourne,Inner North,216.27,98.7,3,219.13,2020-2022,219.13,435.4
+99280,Blairgowrie,Mornington Peninsula,164.33,250.4,4,65.62,2020-2022,65.62,229.95
+99992,Mornington Life Saving Club,Mornington Peninsula,148.07,66.4,5,222.88,2020-2022,222.88,370.95
+99550,Dromana,Mornington Peninsula,97.85,147.4,6,66.38,2020-2022,66.38,164.23
+99170,Frankston Surf Life Saving Club,Eastern Bayside,92.35,42.1,7,219.25,2020-2022,219.25,311.6
+99630,Sandringham,Eastern Bayside,86.89,235.7,8,36.86,2020-2022,36.86,123.75
+99690,Sandridge,Inner North,61.04,48.1,9,126.91,2020-2022,126.91,187.95
+99580,Canadian Bay,Eastern Bayside,58.92,49.7,10,118.56,2020-2022,118.56,177.48
+99510,Eastern Beach,Western Shore,52.36,73.8,11,70.96,2020-2022,70.96,123.32
+99700,Williamstown,Inner North,51.37,77.2,12,66.51,2020-2022,66.51,117.88
+99994,Mt Martha Life Saving Club,Mornington Peninsula,22.12,41.5,13,53.26,2020-2022,53.26,75.38
+99160,Seaford,Eastern Bayside,21.59,27.7,14,77.92,2020-2022,77.92,99.51
+99620,Mordialloc,Eastern Bayside,21.14,18.5,15,114.49,2020-2022,114.49,135.63
+99990,Beaumaris,Eastern Bayside,17.85,25.6,16,69.68,2020-2022,69.68,87.53
+99997,South Melbourne Life Saving Club,Inner North,8.84,10.2,17,86.81,2020-2022,86.81,95.65
+99999,Black Rock Life Saving Club,Eastern Bayside,7.0,19.0,18,36.91,2020-2022,36.91,43.91
+99991,Brighton Life Saving Club,Inner North,5.01,5.8,19,85.7,2020-2022,85.7,90.71
+99520,Portsea,Mornington Peninsula,-3.13,-20.6,20,15.2,2020-2022,15.2,12.07
+99070,Half Moon Bay,Eastern Bayside,-4.7,-7.4,21,63.39,2020-2022,63.39,58.69
+99100,Mentone,Eastern Bayside,-18.27,-10.4,22,175.77,2020-2022,175.77,157.5
+99530,Rye,Mornington Peninsula,-21.85,-15.6,23,140.0,2020-2022,140.0,118.15
+99996,Aspendale Life Saving Club,Eastern Bayside,-21.9,-22.4,24,97.96,2020-2022,97.96,76.06
+99761,Portarlington Beach (new site),Western Shore,-27.53,-37.9,25,72.68,2020-2022,72.68,45.15
+99993,Rosebud Life Saving Club,Mornington Peninsula,-27.99,-23.1,26,121.04,2020-2022,121.04,93.05
+99998,Santa Casa,Western Shore,-30.65,-76.6,27,40.0,2020-2022,40.0,9.35
+99290,Sorrento,Mornington Peninsula,-36.23,-44.0,28,82.33,2020-2022,82.33,46.1
+99770,St Leonards,Western Shore,-40.57,-45.2,29,89.73,2020-2022,89.73,49.16
+99650,Elwood,Inner North,-42.59,-29.5,30,144.46,2020-2022,144.46,101.87
+99500,The Dell,Western Shore,-42.6,-26.5,31,160.82,2020-2022,160.82,118.22
+99240,Safety Beach,Mornington Peninsula,-43.83,-38.3,32,114.29,2020-2022,114.29,70.46
+99660,St Kilda,Inner North,-82.11,-24.9,33,329.19,2020-2022,329.19,247.08
+99060,Hampton,Inner North,-106.19,-56.6,34,187.54,2020-2022,187.54,81.35
+99710,Altona,Inner North,-110.69,-56.7,35,195.36,2020-2022,195.36,84.67
+99730,Werribee Sth,Western Shore,-201.31,-78.4,36,256.77,2020-2022,256.77,55.46
+99590,Frankston Coast Guard,Eastern Bayside,469.16,387.6,1,590.2,2023-2025,121.04,590.2
+99995,Carrum Surf Life Saving Club,Eastern Bayside,420.85,595.7,2,491.5,2023-2025,70.65,491.5
+99020,Port Melbourne,Inner North,216.27,98.7,3,435.4,2023-2025,219.13,435.4
+99280,Blairgowrie,Mornington Peninsula,164.33,250.4,4,229.95,2023-2025,65.62,229.95
+99992,Mornington Life Saving Club,Mornington Peninsula,148.07,66.4,5,370.95,2023-2025,222.88,370.95
+99550,Dromana,Mornington Peninsula,97.85,147.4,6,164.23,2023-2025,66.38,164.23
+99170,Frankston Surf Life Saving Club,Eastern Bayside,92.35,42.1,7,311.6,2023-2025,219.25,311.6
+99630,Sandringham,Eastern Bayside,86.89,235.7,8,123.75,2023-2025,36.86,123.75
+99690,Sandridge,Inner North,61.04,48.1,9,187.95,2023-2025,126.91,187.95
+99580,Canadian Bay,Eastern Bayside,58.92,49.7,10,177.48,2023-2025,118.56,177.48
+99510,Eastern Beach,Western Shore,52.36,73.8,11,123.32,2023-2025,70.96,123.32
+99700,Williamstown,Inner North,51.37,77.2,12,117.88,2023-2025,66.51,117.88
+99994,Mt Martha Life Saving Club,Mornington Peninsula,22.12,41.5,13,75.38,2023-2025,53.26,75.38
+99160,Seaford,Eastern Bayside,21.59,27.7,14,99.51,2023-2025,77.92,99.51
+99620,Mordialloc,Eastern Bayside,21.14,18.5,15,135.63,2023-2025,114.49,135.63
+99990,Beaumaris,Eastern Bayside,17.85,25.6,16,87.53,2023-2025,69.68,87.53
+99997,South Melbourne Life Saving Club,Inner North,8.84,10.2,17,95.65,2023-2025,86.81,95.65
+99999,Black Rock Life Saving Club,Eastern Bayside,7.0,19.0,18,43.91,2023-2025,36.91,43.91
+99991,Brighton Life Saving Club,Inner North,5.01,5.8,19,90.71,2023-2025,85.7,90.71
+99520,Portsea,Mornington Peninsula,-3.13,-20.6,20,12.07,2023-2025,15.2,12.07
+99070,Half Moon Bay,Eastern Bayside,-4.7,-7.4,21,58.69,2023-2025,63.39,58.69
+99100,Mentone,Eastern Bayside,-18.27,-10.4,22,157.5,2023-2025,175.77,157.5
+99530,Rye,Mornington Peninsula,-21.85,-15.6,23,118.15,2023-2025,140.0,118.15
+99996,Aspendale Life Saving Club,Eastern Bayside,-21.9,-22.4,24,76.06,2023-2025,97.96,76.06
+99761,Portarlington Beach (new site),Western Shore,-27.53,-37.9,25,45.15,2023-2025,72.68,45.15
+99993,Rosebud Life Saving Club,Mornington Peninsula,-27.99,-23.1,26,93.05,2023-2025,121.04,93.05
+99998,Santa Casa,Western Shore,-30.65,-76.6,27,9.35,2023-2025,40.0,9.35
+99290,Sorrento,Mornington Peninsula,-36.23,-44.0,28,46.1,2023-2025,82.33,46.1
+99770,St Leonards,Western Shore,-40.57,-45.2,29,49.16,2023-2025,89.73,49.16
+99650,Elwood,Inner North,-42.59,-29.5,30,101.87,2023-2025,144.46,101.87
+99500,The Dell,Western Shore,-42.6,-26.5,31,118.22,2023-2025,160.82,118.22
+99240,Safety Beach,Mornington Peninsula,-43.83,-38.3,32,70.46,2023-2025,114.29,70.46
+99660,St Kilda,Inner North,-82.11,-24.9,33,247.08,2023-2025,329.19,247.08
+99060,Hampton,Inner North,-106.19,-56.6,34,81.35,2023-2025,187.54,81.35
+99710,Altona,Inner North,-110.69,-56.7,35,84.67,2023-2025,195.36,84.67
+99730,Werribee Sth,Western Shore,-201.31,-78.4,36,55.46,2023-2025,256.77,55.46

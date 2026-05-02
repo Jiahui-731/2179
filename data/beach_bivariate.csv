@@ -1,0 +1,37 @@
+site_id,site_name,name_short,callout_label,callout_lon,callout_lat,region,lat,lon,baseline,wet_avg,sensitivity,baseline_class,sens_class,bivariate_cell,n_dry,n_wet
+99020,Port Melbourne,Port Melbourne,Port Melbourne,144.879766,-37.903866,Inner North,-37.843866,144.937766,324.1,650.7,326.6,high,high,high_high,130,20
+99060,Hampton,Hampton,,144.997116,-37.938,Inner North,-37.938,144.997116,79.1,354.0,274.9,low,high,low_high,130,19
+99070,Half Moon Bay,Half Moon Bay,,145.011066,-37.968566,Eastern Bayside,-37.968566,145.011066,58.6,71.0,12.4,low,mid,low_mid,130,19
+99100,Mentone,Mentone,,145.058733,-37.9891,Eastern Bayside,-37.9891,145.058733,146.5,278.2,131.7,mid,high,mid_high,131,19
+99160,Seaford,Seaford,,145.12455,-38.103316,Eastern Bayside,-38.103316,145.12455,89.5,113.8,24.3,mid,mid,mid_mid,131,19
+99170,Frankston Surf Life Saving Club,Frankston SLC,,145.11854,-38.142333,Eastern Bayside,-38.142333,145.11854,286.8,252.1,-34.7,high,low,high_low,133,19
+99240,Safety Beach,Safety Beach,,144.992366,-38.311266,Mornington Peninsula,-38.311266,144.992366,71.5,173.8,102.3,low,high,low_high,130,19
+99280,Blairgowrie,Blairgowrie,,144.781716,-38.36095,Mornington Peninsula,-38.36095,144.781716,196.0,55.6,-140.4,high,low,high_low,130,19
+99290,Sorrento,Sorrento,,144.7528,-38.343516,Mornington Peninsula,-38.343516,144.7528,44.7,147.2,102.4,low,high,low_high,131,19
+99500,The Dell,The Dell,,144.563007,-38.152496,Western Shore,-38.152496,144.563007,125.1,179.3,54.2,mid,mid,mid_mid,135,19
+99510,Eastern Beach,Eastern Beach,,144.37085,-38.146666,Western Shore,-38.146666,144.37085,99.7,152.0,52.4,mid,mid,mid_mid,135,20
+99520,Portsea,Portsea,,144.713816,-38.318983,Mornington Peninsula,-38.318983,144.713816,13.7,7.4,-6.3,low,low,low_low,123,19
+99530,Rye,Rye,,144.8321,-38.370183,Mornington Peninsula,-38.370183,144.8321,109.8,225.2,115.4,mid,high,mid_high,131,20
+99550,Dromana,Dromana,,144.964633,-38.332033,Mornington Peninsula,-38.332033,144.964633,143.3,61.4,-81.9,mid,low,mid_low,131,19
+99580,Canadian Bay,Canadian Bay,,145.083083,-38.17175,Eastern Bayside,-38.17175,145.083083,172.2,65.6,-106.6,mid,low,mid_low,132,19
+99590,Frankston Coast Guard,Frankston Coast Guard,Frankston CG,145.115502,-38.147043,Eastern Bayside,-38.147043,145.115502,479.3,163.4,-315.9,high,low,high_low,130,19
+99620,Mordialloc,Mordialloc,,145.0833,-38.008817,Eastern Bayside,-38.008817,145.0833,117.4,205.6,88.2,mid,mid,mid_mid,129,20
+99630,Sandringham,Sandringham,,145.001354,-37.950796,Eastern Bayside,-37.950796,145.001354,106.8,36.9,-69.9,mid,low,mid_low,128,19
+99650,Elwood,Elwood,,144.983613,-37.889061,Inner North,-37.889061,144.983613,109.1,155.6,46.4,mid,mid,mid_mid,129,19
+99660,St Kilda,St Kilda,,144.974033,-37.868166,Inner North,-37.868166,144.974033,271.2,282.8,11.6,high,mid,high_mid,132,19
+99690,Sandridge,Sandridge,Sandridge,144.916412,-37.840033,Inner North,-37.840033,144.916412,100.9,632.9,532.0,mid,high,mid_high,130,19
+99700,Williamstown,Williamstown,,144.893233,-37.867962,Inner North,-37.867962,144.893233,100.9,107.1,6.2,mid,mid,mid_mid,130,19
+99710,Altona,Altona,,144.83125,-37.871066,Inner North,-37.871066,144.83125,100.2,251.5,151.3,mid,high,mid_high,131,19
+99730,Werribee Sth,Werribee Sth,Werribee Sth,144.692783,-37.974916,Western Shore,-37.974916,144.692783,71.6,450.2,378.6,low,high,low_high,134,19
+99761,Portarlington Beach (new site),Portarlington,,144.650817,-38.112672,Western Shore,-38.112672,144.650817,51.6,71.2,19.7,low,mid,low_mid,155,24
+99770,St Leonards,St Leonards,,144.719166,-38.170783,Western Shore,-38.170783,144.719166,58.3,89.4,31.1,low,mid,low_mid,134,19
+99990,Beaumaris,Beaumaris,,145.03275,-37.994966,Eastern Bayside,-37.994966,145.03275,78.4,106.1,27.7,low,mid,low_mid,130,19
+99991,Brighton Life Saving Club,Brighton LSC,,144.986083,-37.917297,Inner North,-37.917297,144.986083,78.1,159.4,81.3,low,mid,low_mid,117,19
+99992,Mornington Life Saving Club,Mornington LSC,Mornington LSC,145.044181,-38.21363,Mornington Peninsula,-38.21363,145.044181,357.5,91.9,-265.6,high,low,high_low,134,19
+99993,Rosebud Life Saving Club,Rosebud LSC,,144.92806,-38.347306,Mornington Peninsula,-38.347306,144.92806,104.9,82.1,-22.8,mid,low,mid_low,131,19
+99994,Mt Martha Life Saving Club,Mt Martha LSC,,145.013913,-38.265248,Mornington Peninsula,-38.265248,145.013913,72.3,42.7,-29.6,low,low,low_low,129,19
+99995,Carrum Surf Life Saving Club,Carrum SLC,,145.12064,-38.076393,Eastern Bayside,-38.076393,145.12064,349.8,424.0,74.2,high,mid,high_mid,133,20
+99996,Aspendale Life Saving Club,Aspendale LSC,,145.100253,-38.028173,Eastern Bayside,-38.028173,145.100253,84.9,70.4,-14.5,mid,low,mid_low,131,19
+99997,South Melbourne Life Saving Club,South Melb LSC,,144.94625,-37.847497,Inner North,-37.847497,144.94625,61.0,311.1,250.1,low,high,low_high,130,19
+99998,Santa Casa,Santa Casa,,144.648588,-38.272293,Western Shore,-38.272293,144.648588,20.5,9.6,-10.9,low,low,low_low,134,19
+99999,Black Rock Life Saving Club,Black Rock LSC,,145.014242,-37.974777,Eastern Bayside,-37.974777,145.014242,43.9,27.3,-16.6,low,low,low_low,128,19

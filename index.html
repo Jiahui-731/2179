@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can We Swim Today? — Melbourne Beach Water Quality</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+</head>
+<body>
+
+  <header class="hero">
+    <p class="kicker">A data story · 2026</p>
+    <h1>Can We Swim Today?</h1>
+    <p class="lede">
+      Every summer, millions of Melburnians flock to the beaches of Port Phillip Bay.
+      But the water isn't always as clean as it looks.
+      Using six years of EPA Victoria sampling and Bureau of Meteorology rainfall data,
+      this is a story about <em>when</em>, <em>where</em>, and <em>why</em>
+      it's actually safe to swim.
+    </p>
+    <p class="byline">By Jiahui · 5,622 samples · 36 beaches · 2020-2025</p>
+  </header>
+
+  <section class="key-findings">
+    <h3>Three things the data already knows</h3>
+    <ol>
+      <li>Across 5,622 routine samples, <strong>9.6% fail EPA's swim-safe threshold</strong> — but the failures cluster, badly.</li>
+      <li>The single biggest predictor isn't the season but <strong>yesterday's rain</strong>: more than 20mm nearly doubles the share of failed samples.</li>
+      <li><strong>Eastern Bayside</strong> beaches got dramatically dirtier between 2020-2022 and 2023-2025; several Inner-North beaches actually <em>improved</em>.</li>
+    </ol>
+  </section>
+
+  <nav class="toc">
+    <a href="#ch1">① Where</a>
+    <a href="#ch2">② How dirty</a>
+    <a href="#ch3">③ When</a>
+    <a href="#ch4">④ Why</a>
+    <a href="#ch5">⑤ Region</a>
+    <a href="#ch6">⑥ Verdict</a>
+  </nav>
+
+  <main>
+
+    <section class="chapter" id="ch1">
+      <p class="chapter-num"><span class="ch-no">①</span> Where</p>
+      <h2>Where are the monitored beaches?</h2>
+      <p class="prose">
+        Twenty kilometres south of Melbourne, Port Phillip Bay arcs in a near-circle —
+        a 1,930-square-kilometre tidal basin almost sealed off from Bass Strait by the
+        thin curl of the Mornington Peninsula. Since 2013, EPA Victoria has tracked bacteria
+        levels at <strong>36 beaches</strong> ringing its shore. Hover over any dot to read its long-term average.
+      </p>
+      <div id="chart-0" class="chart"></div>
+      <p class="caption">36 EPA monitoring sites around Port Phillip Bay (Mercator projection). Each region of the bay is shaded with a light tint (choropleth layer); each circle marks one monitoring site, sized by long-term average enterococci (orgs / 100mL, 2020-2025, square-root scaled) and coloured by region (proportional symbol layer). The three worst beaches — Frankston Coast Guard, Port Melbourne, Carrum SLC — are labelled inline. Coastline simplified from Australian Bureau of Statistics state boundaries.</p>
+      <p class="prose interlude">
+        That geography is hard to read at a glance — the bay is shaped less like a circle than a
+        slightly squashed teardrop. So next, take the same 36 beaches and unfold the coastline
+        into a perfect ring: each ray, one beach, clockwise from <em>Williamstown</em> at the top.
+        The longer the ray, the dirtier the beach.
+      </p>
+      <div id="chart-1" class="chart"></div>
+      <p class="caption">36 monitored sites · 5,622 routine samples · 2020-2025. Ray length = long-term average enterococci (orgs / 100mL); colour = bay region. Inner dashed ring marks the EPA Good threshold (35); outer red dashed ring marks the Poor threshold (200).</p>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <p class="chapter-num"><span class="ch-no">②</span> How dirty</p>
+      <h2>Not every beach is created equal.</h2>
+      <p class="prose">
+        Bacteria levels — measured as <em>enterococci</em>, the bug that signals fecal
+        contamination — vary widely between beaches. <strong>Frankston Coast Guard</strong>
+        averages 439 organisms per 100mL across routine samples; <strong>Portsea</strong>, just down
+        the peninsula, averages 13. Take the same beach order as the radial chart above and
+        unfold it left-to-right — the bay's pollution skyline emerges as bars.
+      </p>
+      <div id="chart-2" class="chart"></div>
+      <p class="caption">
+        Three towering red and amber bars — Port Melbourne, Carrum SLC, Frankston Coast Guard — define the bay's "dirty crescent" along the Eastern Bayside and Inner North. Mornington Peninsula and Western Shore stay almost entirely below the EPA Poor line. <strong>Worst:</strong> Frankston Coast Guard (439), Port Melbourne (368), Carrum SLC (359). <strong>Cleanest:</strong> Portsea (13), Santa Casa (19).
+      </p>
+      <p class="prose interlude">
+        Zoom in on the worst end of the bay's hierarchy. Ten beaches —
+        most of them along the Inner-North and Eastern Bayside corridor — sit
+        far above the EPA Poor threshold, with long-term averages above
+        100 organisms / 100 mL. <strong>Frankston Coast Guard</strong> tops the list at 439.
+      </p>
+      <div id="chart-7" class="chart"></div>
+      <p class="caption">The ten beaches with the highest long-term enterococci averages, 2020-2025. Bar colour shows the bay region; dashed lines mark the EPA Good (35) and Poor (200) thresholds.</p>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <p class="chapter-num"><span class="ch-no">③</span> When</p>
+      <h2>The dirtiest months are the ones we swim in.</h2>
+      <p class="prose">
+        Bacteria don't bloom uniformly across the year. The ten beaches with the highest
+        long-term averages — the bay's worst — show a clear seasonal pattern: a red band runs
+        from <strong>late summer through early autumn</strong>, the same months people swim.
+      </p>
+      <div id="chart-3" class="chart"></div>
+      <p class="caption">The 10 dirtiest beaches by long-term average, ordered worst (top) to best (bottom). Each cell is the beach × month average, 2020-2025. The blue-outlined columns are Nov-Apr — the months people actually swim.</p>
+      <p class="prose interlude">
+        Zoom out from months to years and a different question opens up:
+        which beaches are <em>changing</em>? Of the 36 monitored sites, ten moved by a
+        meaningful margin — five for the worse, five for the better. Each row pairs a beach's
+        2020-2022 average (hollow) with its 2023-2025 average (solid).
+      </p>
+      <div id="chart-5" class="chart"></div>
+      <p class="caption">
+        The bay isn't homogenising — it's polarising. Eastern Bayside dominates the worsening half (Frankston Coast Guard tripled; Carrum SLC sextupled). Inner-North dominates the improving half — including <strong>St Kilda</strong>, often miscast as a beach to skip. The 26 beaches not shown — including Sorrento and Portsea — changed by less than ±50 orgs / 100mL.
+      </p>
+      <p class="prose interlude">
+        Some months are bay-wide disasters. The grid below collapses six years onto a
+        12-month calendar: each cell is one specific month. The deep-red flares —
+        November 2025, April 2024, November 2022 — were periods when nearly
+        <em>one in three</em> bay-wide samples failed.
+      </p>
+      <div id="chart-8" class="chart"></div>
+      <p class="caption">Numbers in each cell are the % of routine samples rated Poor; the margins show month-only and year-only means. Grey cells have no data or fewer than 3 samples. <strong>Worst single month:</strong> November 2025 (31%), April 2024 (30%), November 2022 (31%).</p>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <p class="chapter-num"><span class="ch-no">④</span> Why</p>
+      <h2>The single biggest predictor isn't the season.</h2>
+      <p class="prose">
+        It's whether it rained yesterday. Stormwater runoff carries pet waste, fertilizer
+        and street pollution into the bay; bacteria spike within 24 hours. Below, every dot
+        is one sample, plotted against the previous day's rainfall (Melbourne Olympic Park
+        gauge). The dashed line is the trend.
+      </p>
+      <div id="chart-4" class="chart"></div>
+      <p class="caption">5,622 samples. The trend line slope works out to roughly <strong>+5.4 enterococci per mm of rain</strong> — every 10mm of yesterday's rainfall adds ~54 organisms / 100mL on average. Beyond 20mm, Poor readings cluster densely (red shaded zone). Rainfall comes from one Melbourne Olympic Park gauge, so local beach rainfall can differ.</p>
+      <p class="prose interlude">
+        Bin the data by yesterday's rainfall and the effect is stark.
+      </p>
+      <div id="chart-6" class="chart"></div>
+      <p class="caption">
+        Each bar shows the share of routine samples in that bucket rated Good (≤35), Caution (35-200), or Poor (>200). Dry-day Poor rate sits at 8%; after 20mm+ rain, the Poor sliver swells to 14% — and the Good share retreats from over half to barely a third.
+      </p>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <p class="chapter-num"><span class="ch-no">⑤</span> Region</p>
+      <h2>Geography beats timing.</h2>
+      <p class="prose">
+        Group the bay into four regions and one wins by a wide margin: the
+        <strong>Western Shore</strong> — Werribee, Geelong, Portarlington — has roughly
+        <em>half</em> the bacteria of the urban Inner North. People assume the
+        Mornington Peninsula is the bay's clean haven; the data says the opposite.
+      </p>
+      <div id="chart-9" class="chart"></div>
+      <p class="caption">Bars are region-level means; dots are individual beaches. <strong>Western Shore (avg 81)</strong> sits cleanly below the EPA Good line, with all six of its beaches clustered tightly. The Inner North spreads across the full range — its mean (161) is dragged up by Port Melbourne and Frankston-area outliers.</p>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <p class="chapter-num"><span class="ch-no">⑥</span> Verdict</p>
+      <h2>So — should you swim today?</h2>
+      <p class="prose">
+        The data answers most of the question for you. Find today's month across the top.
+        Find yesterday's rainfall down the side. The cell where they meet is the share of
+        historical routine samples in that region that came back Poor under those exact
+        conditions.
+      </p>
+      <div id="chart-10" class="chart"></div>
+      <p class="caption">
+        Read the table blue, you're probably fine. Read it dark red, find a pool.
+      </p>
+      <p class="prose closing">
+        The summary is simple: avoid the inner-city beaches; avoid the 24 hours after
+        heavy rain; avoid late summer and early autumn if you can. Otherwise — go swim.
+      </p>
+    </section>
+
+    <section class="chapter chapter-method">
+      <details>
+        <summary>A note on method</summary>
+        <div class="method-body">
+          <p class="prose">
+            <strong>Detection limits.</strong> EPA reports values below 10 orgs/100mL as
+            "&lt;10". These censored values are recoded to 5 — the standard half-detection-limit
+            convention for environmental bacterial data. When EPA reports a different
+            limit, the row uses half of that reported limit.
+          </p>
+          <p class="prose">
+            <strong>Site renumbering.</strong> The Portarlington monitoring site moved a short
+            distance in October 2022 (EPA ID <code>99760</code> → <code>99761</code>). The two
+            IDs are merged here for time-series continuity.
+          </p>
+          <p class="prose">
+            <strong>Rainfall.</strong> All rainfall figures come from the BOM Melbourne Olympic
+            Park gauge — the closest reliable long-record station to the bay's eastern shore.
+            Western-shore beaches may experience slightly different precipitation; this is a
+            known approximation, used because no single station covers the whole bay.
+          </p>
+          <p class="prose">
+            <strong>Routine samples.</strong> Headline summaries use scheduled Routine samples
+            only, so EPA follow-up resamples do not double-count known incidents.
+          </p>
+          <p class="prose">
+            <strong>Safety thresholds.</strong> Good ≤ 35, Caution 35-200, Poor &gt; 200
+            organisms / 100mL — EPA Beach Action Values on a single-sample basis.
+          </p>
+          <p class="prose">
+            <strong>Chart 04 scaling.</strong> The rainfall scatter caps its y-axis at 1,000 to
+            keep the trend line readable. About 2% of samples sit above this; they are
+            off-chart visually but still counted in the regression.
+          </p>
+          <p class="prose">
+            <strong>Code &amp; data.</strong> All chart specifications (<code>.vg.json</code>),
+            the preprocessing script, and the source CSVs are open in the project repository.
+          </p>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Author:</strong> Jiahui · FIT2179 Data Visualisation 2 · Monash University · 2026</p>
+    <p><strong>Data sources:</strong>
+      <a href="https://discover.data.vic.gov.au/dataset/beach-report-enterococci-data">EPA Victoria Beach Report (enterococci)</a> ·
+      <a href="http://www.bom.gov.au/climate/data/">BOM Daily Rainfall — Melbourne Olympic Park</a>
+    </p>
+    <p><strong>Geographic ordering:</strong> beach positions in Charts 1 and 2 derived from EPA site latitude/longitude metadata, sorted clockwise from bay centre.</p>
+    <p><strong>Built with:</strong> Vega-Lite 5 · Inter &amp; Playfair Display (Google Fonts).</p>
+    <p class="ai-ack">
+      AI assistance (Claude) was used for code structure, data preprocessing, and visualisation scaffolding.
+      All design decisions, narrative writing, and final review by the author.
+    </p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
